@@ -47,7 +47,7 @@ import com.example.androiddevchallenge.data.Pet
                 .background(Color.White)
                 .fillMaxWidth()){
             itemsIndexed(viewModel.petList){index, pet ->
-                petListItem(pet)
+                PetListItem(pet)
 
             }
 
@@ -57,15 +57,13 @@ import com.example.androiddevchallenge.data.Pet
 
     }
     @Composable
-    fun petListItem(pet: Pet) {
+    fun PetListItem(pet: Pet) {
         val viewModel: PetViewModel = viewModel()
         Row(
             Modifier
                 .fillMaxWidth()
                 .clickable(onClick = {
                     viewModel.goToDetail(pet)
-//                viewModel.offset = 0.dp
-//                Log.d("123456", "${viewModel!!.currentPage!!.name}")
                 })
         ){
             Image(

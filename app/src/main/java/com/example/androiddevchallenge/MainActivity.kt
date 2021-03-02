@@ -14,7 +14,7 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
 class MainActivity : AppCompatActivity() {
 
 
-    val viewModel: PetViewModel by viewModels()
+   private val viewModel: PetViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
