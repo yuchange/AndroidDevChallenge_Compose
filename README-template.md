@@ -1,17 +1,18 @@
-# Put title of your app here
+# Pet Adopt
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
-![Workflow result](https://github.com/<OWNER>/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/yuchange/AndroidDevChallenge_Compose.git)
 
 
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
-
+熬了2个夜,简单的学了一下,做的比较粗糙,觉得颠覆了自己对于UI的理解,希望以后可以更深一步学习
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
 <!--- What are you especially proud of? -->
+从一点没接触过的Compose小白到懂了些皮毛,我觉得迈出这一步才是最重要的,每一个效果都是自豪的
 
 
 ## :camera_flash: Screenshots
