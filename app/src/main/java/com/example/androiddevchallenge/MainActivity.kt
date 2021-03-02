@@ -31,7 +31,7 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
 class MainActivity : AppCompatActivity() {
 
 
-   private val viewModel: PetViewModel by viewModels()
+    private val viewModel: PetViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,10 +62,6 @@ class MainActivity : AppCompatActivity() {
 
 
 }
-
-
-
-
 
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)

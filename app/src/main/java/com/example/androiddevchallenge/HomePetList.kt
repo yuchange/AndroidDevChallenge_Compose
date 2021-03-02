@@ -41,86 +41,63 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.androiddevchallenge.data.Pet
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @Composable
-    fun HomePetList(viewModel:PetViewModel) {
-        Column(Modifier.fillMaxSize()) {
-            Box(
-                Modifier
-                    .background(Color.White)
-                    .fillMaxSize()) {
-                PetList(viewModel)
-            }
-        }
-
-
-    }
-
-    @Composable
-    fun PetList(viewModel: PetViewModel) {
-        LazyColumn(
+@Composable
+fun HomePetList(viewModel: PetViewModel) {
+    Column(Modifier.fillMaxSize()) {
+        Box(
             Modifier
                 .background(Color.White)
-                .fillMaxWidth()){
-            itemsIndexed(viewModel.petList){index, pet ->
-                PetListItem(pet)
+                .fillMaxSize()
+        ) {
+            PetList(viewModel)
+        }
+    }
+}
 
-            }
-
+@Composable
+fun PetList(viewModel: PetViewModel) {
+    LazyColumn(
+        Modifier
+            .background(Color.White)
+            .fillMaxWidth()
+    ) {
+        itemsIndexed(viewModel.petList) { index, pet ->
+            PetListItem(pet)
 
         }
-
-
     }
-    @Composable
-    fun PetListItem(pet: Pet) {
-        val viewModel: PetViewModel = viewModel()
-        Row(
+}
+
+@Composable
+fun PetListItem(pet: Pet) {
+    val viewModel: PetViewModel = viewModel()
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .clickable(onClick = {
+                viewModel.goToDetail(pet)
+            })
+    ) {
+        Image(
+            painterResource(pet.avatar), "avatar",
             Modifier
-                .fillMaxWidth()
-                .clickable(onClick = {
-                    viewModel.goToDetail(pet)
-                })
-        ){
-            Image(
-                painterResource(pet.avatar),"avatar",
-                Modifier
-                    .padding(20.dp, 20.dp, 20.dp, 20.dp)
-                    .size(200.dp)
-                    .clip(
-                        RoundedCornerShape(4.dp)
-                    ))
-            Column(
-                Modifier
-                    .weight(1f)
-                    .align(Alignment.CenterVertically)) {
+                .padding(20.dp, 20.dp, 20.dp, 20.dp)
+                .size(200.dp)
+                .clip(
+                    RoundedCornerShape(4.dp)
+                )
+        )
+        Column(
+            Modifier
+                .weight(1f)
+                .align(Alignment.CenterVertically)
+        ) {
 
-                Text(pet.name,fontSize = 25.sp,color = Color.Blue)
-            }
-
-
+            Text(pet.name, fontSize = 25.sp, color = Color.Blue)
         }
 
 
     }
+
+
+}
