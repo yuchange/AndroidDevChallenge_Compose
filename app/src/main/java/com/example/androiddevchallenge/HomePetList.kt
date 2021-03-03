@@ -23,7 +23,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -63,7 +62,6 @@ fun PetList(viewModel: PetViewModel) {
     ) {
         itemsIndexed(viewModel.petList) { index, pet ->
             PetListItem(pet)
-
         }
     }
 }
@@ -74,9 +72,11 @@ fun PetListItem(pet: Pet) {
     Row(
         Modifier
             .fillMaxWidth()
-            .clickable(onClick = {
-                viewModel.goToDetail(pet)
-            })
+            .clickable(
+                onClick = {
+                    viewModel.goToDetail(pet)
+                }
+            )
     ) {
         Image(
             painterResource(pet.avatar), "avatar",
@@ -95,9 +95,5 @@ fun PetListItem(pet: Pet) {
 
             Text(pet.name, fontSize = 25.sp, color = Color.Blue)
         }
-
-
     }
-
-
 }

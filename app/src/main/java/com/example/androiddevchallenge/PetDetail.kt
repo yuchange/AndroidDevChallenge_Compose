@@ -44,9 +44,10 @@ fun PetDetail(viewModel: PetViewModel) {
                 }
             }
             .fillMaxSize()
-            .background(Color.White)) {
+            .background(Color.White)
+    ) {
         Image(
-            painterResource(R.mipmap.exit),"exit",
+            painterResource(R.mipmap.exit), "exit",
             Modifier
                 .size(40.dp)
                 .background(
@@ -55,18 +56,14 @@ fun PetDetail(viewModel: PetViewModel) {
                 .clickable {
                     viewModel.detailPet = null
                     viewModel.detailPage = false
-                })
-        if (viewModel.detailPet!=null) {
+                }
+        )
+        if (viewModel.detailPet != null) {
             Image(
                 painterResource(viewModel.detailPet!!.avatar), "avatar", Modifier.fillMaxWidth().size(200.dp),
-                Alignment.Center)
-            Text(viewModel.detailPet!!.info, Modifier.fillMaxWidth(), Color.Blue,25.sp)
+                Alignment.Center
+            )
+            Text(viewModel.detailPet!!.info, Modifier.fillMaxWidth(), Color.Blue, 25.sp)
         }
     }
-
 }
-
-
-
-
-

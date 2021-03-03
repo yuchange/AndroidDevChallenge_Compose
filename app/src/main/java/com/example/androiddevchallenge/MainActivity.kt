@@ -15,7 +15,6 @@
  */
 package com.example.androiddevchallenge
 
-
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -30,7 +29,6 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
 
-
     private val viewModel: PetViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,11 +41,8 @@ class MainActivity : AppCompatActivity() {
                     HomePetList(viewModel)
                     PetDetail(viewModel)
                 }
-
             }
         }
-
-
     }
 
     override fun onBackPressed() {
@@ -57,18 +52,13 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onBackPressed()
         }
-
     }
-
-
 }
-
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun LightPreview() {
     MyTheme {
-
     }
 }
 
@@ -76,6 +66,5 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-
     }
 }

@@ -18,7 +18,6 @@ package com.example.androiddevchallenge
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import com.example.androiddevchallenge.data.Pet
 
@@ -52,6 +51,4 @@ class PetViewModel : ViewModel() {
         detailPage = true
         detailPet = pet
     }
-
-
 }
